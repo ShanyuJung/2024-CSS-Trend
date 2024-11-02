@@ -5,12 +5,10 @@ theme: seriph
 # like them? see https://unsplash.com/collections/94734566/slidev
 background: https://cover.sli.dev
 # some information about your slides (markdown enabled)
-title: Welcome to Slidev
+title: 2024 CSS Trend
 info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
-
-  Learn more at [Sli.dev](https://sli.dev)
+  ## 2024 CSS Trend
+  Fuck off JS
 # apply unocss classes to the current slide
 class: text-center
 # https://sli.dev/features/drawing
@@ -24,106 +22,101 @@ mdc: true
 overviewSnapshots: true
 ---
 
-# Welcome to Slidev
+# 2024 CSS Trend
 
-Presentation slides for developers
-
-<div class="pt-12">
-  <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    Press Space for next page <carbon:arrow-right class="inline"/>
-  </span>
-</div>
-
-<div class="abs-br m-6 flex gap-2">
-  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon:edit />
-  </button>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" alt="GitHub" title="Open in GitHub"
-    class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon-logo-github />
-  </a>
-</div>
-
-<!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
--->
-
----
-
-## transition: fade-out
-
-# What is Slidev?
-
-Slidev is a slides maker and presenter designed for developers, consist of the following features
-
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - themes can be shared and re-used as npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embed Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export to PDF, PPTX, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - virtually anything that's possible on a webpage is possible in Slidev
-  <br>
-  <br>
-
-Read more about [Why Slidev?](https://sli.dev/guide/why)
-
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/features/slide-scope-style
--->
+### Fuck off JS
 
 <style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
+  h3{
+    opacity: 0.7
+  }
 </style>
 
-<!--
-Here is another comment.
--->
+---
+
+# Before We Start
+
+<div class='container'>
+ Uninstall your FireFox 
+</div>
+
+<style>
+  .container{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+  }
+</style>
 
 ---
 
-transition: slide-up
-level: 2
+# `:has` Selector
 
----
+#### The parent selector can determine the style of the parent based on its children.
 
-# Navigation
+<p>Since December 2023, this feature works across the latest devices and browser versions. This feature might not work in older devices or browsers.</p>
 
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/ui#navigation-bar)
+````md magic-move {lines: true}
+<!-- step 1 -->
 
-## Keyboard Shortcuts
+```html
+<div class="parent">
+  <div class="child"></div>
+</div>
+```
 
-|                                                    |                             |
-| -------------------------------------------------- | --------------------------- |
-| <kbd>right</kbd> / <kbd>space</kbd>                | next animation or slide     |
-| <kbd>left</kbd> / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd>                                      | previous slide              |
-| <kbd>down</kbd>                                    | next slide                  |
+<!-- step 2 -->
 
-<!-- https://sli.dev/guide/animations.html#click-animation -->
+```css
+.parent:has(.child) {
+  /* css 代碼 */
+}
+```
 
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-  alt=""
-/>
+<!-- step 3 -->
 
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
+```css
+button:has(.icon) {
+  display: flex;
+  gap: 10px;
+}
+```
 
----
+<!-- step 4 -->
 
-layout: two-cols
-layoutClass: gap-16
+```css
+/* pass css when card has image with sibling p  */
+.card:has(img + p) {
+  flex-direction: column;
+}
+```
+
+<!-- step 5 -->
+
+```css
+.card:not(:has(img)) {
+  /* css for card without img element  */
+}
+```
+
+<!-- step 6 -->
+
+```css
+/* pass css by children's condition  */
+form:has(input:invalid) {
+  border: 1px solid red;
+}
+```
+````
+
+<style>
+  p{
+    opacity: 0.5
+  }
+</style>
 
 ---
 
@@ -569,6 +562,51 @@ Learn more: [Mermaid Diagrams](https://sli.dev/features/mermaid) and [PlantUML D
 foo: bar
 dragPos:
 square: 691,32,167,\_,-16
+
+---
+
+dragPos:
+square: -69,0,0,0
+
+---
+
+dragPos:
+square: -69,0,0,0
+
+---
+
+dragPos:
+square: -69,0,0,0
+
+---
+
+dragPos:
+square: -69,0,0,0
+
+---
+
+dragPos:
+square: -69,0,0,0
+
+---
+
+dragPos:
+square: -69,0,0,0
+
+---
+
+dragPos:
+square: -69,0,0,0
+
+---
+
+dragPos:
+square: -69,0,0,0
+
+---
+
+dragPos:
+square: -69,0,0,0
 
 ---
 

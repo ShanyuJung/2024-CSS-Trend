@@ -145,6 +145,26 @@ div + p {
 
 ---
 
+# Advanced Uses of `:has` Selector
+
+```css {*|1-3|5-7|9-11}
+ul:has(> :nth-child(5)) {
+  outline: 1px solid green;
+}
+
+ul:has(> :nth-child(5):last-child) {
+  outline: 1px solid blue;
+}
+
+ul:not(:has(> :nth-child(5))) {
+  outline: 1px solid red;
+}
+```
+
+<ListCounter :count="1" m="t-4"/>
+
+---
+
 # Table of contents
 
 You can use the `Toc` component to generate a table of contents for your slides:

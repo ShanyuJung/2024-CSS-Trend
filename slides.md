@@ -165,6 +165,20 @@ ul:not(:has(> :nth-child(5))) {
 
 ---
 
+# Anywhere Selector
+
+```css
+.container:has(option[value="dark"]:checked) {
+  --primary-color: #e43;
+  --surface-color: #1b1b1b;
+  --text-color: #eee;
+}
+```
+
+<ThemeSelector />
+
+---
+
 # Table of contents
 
 You can use the `Toc` component to generate a table of contents for your slides:

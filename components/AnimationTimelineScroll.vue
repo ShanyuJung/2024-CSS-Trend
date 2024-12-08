@@ -108,13 +108,14 @@
       </div>
     </div>
   </div>
+  <h5>Reference from https://codepen.io/bear320/pen/jOdXQGx</h5>
 </template>
 <style scoped>
 .timeline-scroll-container {
   position: relative;
   overflow: auto;
   width: 80%;
-  height: 30vh;
+  height: 40vh;
 }
 
 img {

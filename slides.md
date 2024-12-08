@@ -179,24 +179,55 @@ ul:not(:has(> :nth-child(5))) {
 
 ---
 
-# Table of contents
+# Container Queries - Size
 
-You can use the `Toc` component to generate a table of contents for your slides:
+`Container Queries` allows styles to be applied based on the size of the container, enabling components to determine their styles based on their own dimensions rather than relying on the window size.
 
-```html
-<Toc minDepth="1" maxDepth="1"></Toc>
-```
+<div class="containerQueryDesc">
+  <ul>
+    <li>No longer constrained by the viewport, you can better predict how components will render</li>
+    <li>This also improves reusability, ensuring consistent style application logic regardless of which page the component is placed on</li>
+    <li>A revolutionary new CSS length property</li>
+  </ul>
+  <img width="40%"  src="https://web.dev/static/blog/cq-stable/image/media-queries-vs-containe-fa94919e025e3.png?hl=zh-tw"/>
+</div>
 
-The title will be inferred from your slide content, or you can override it with `title` and `level` in your frontmatter.
-
-::right::
-
-<Toc v-click minDepth="1" maxDepth="2"></Toc>
+<style>
+  .containerQueryDesc{
+    display: flex;
+  }
+</style>
 
 ---
 
-layout: image-right
-image: https://cover.sli.dev
+# Container Queries - Code
+
+```html
+<div class="element-wrap">
+  <div class="element"></div>
+</div>
+```
+
+```css
+.element-wrap {
+  /* container-name: element; */
+  /* container-type: inline-size; */
+  /* shorthand: name / type */
+  container: element / inline-size;
+}
+@container element (min-inline-size: 300px) {
+  .element {
+    display: flex;
+    gap: 1rem;
+  }
+}
+```
+
+---
+
+# Container Queries - Demo
+
+<ContainerQuery />
 
 ---
 
@@ -669,6 +700,16 @@ square: -69,0,0,0
 
 ---
 
+dragPos:
+square: -67,0,0,0
+
+---
+
+dragPos:
+square: -56,0,0,0
+
+---
+
 # Draggable Elements
 
 Double-click on the draggable elements to edit their positions.
@@ -692,7 +733,8 @@ Double-click on the draggable elements to edit their positions.
 </v-drag>
 ```
 
-<v-drag pos="663,206,261,_,-15">
+<v-drag pos="663,206,261,\_,-15"undefined>
+
   <div text-center text-3xl border border-main rounded>
     Double-click me!
   </div>

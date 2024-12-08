@@ -231,6 +231,55 @@ ul:not(:has(> :nth-child(5))) {
 
 ---
 
+# Scroll-Driven Animations
+
+<AnimationTimelineScroll />
+
+---
+
+# Scroll-Driven Animations - Code
+
+````md magic-move {lines: true}
+```html{*|1,2}
+<div class="timeline-scroll-container">
+    <div class="progress"></div>
+      <div class="container">
+        <!-- some contain ...  -->
+      </div>
+    </div>
+</div>
+```
+
+```css{*|1,10,11,12,23}
+@keyframes progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.timeline-scroll-container {
+  scroll-timeline: --progress block;
+}
+
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0.5rem;
+  background-color: #f08080;
+  transform-origin: 0 50%;
+  animation: progress auto linear;
+  animation-timeline: --progress;
+}
+```
+````
+
+---
+
 # Code
 
 Use code snippets and get the highlighting directly, and even types hover!
@@ -707,6 +756,11 @@ square: -67,0,0,0
 
 dragPos:
 square: -56,0,0,0
+
+---
+
+dragPos:
+square: 0,-44,0,0
 
 ---
 

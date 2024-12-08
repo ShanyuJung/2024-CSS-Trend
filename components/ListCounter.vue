@@ -18,7 +18,7 @@ watch(
 </script>
 
 <template>
-  <div>
+  <div class="listCounter">
     <ul flex="~">
       <li v-for="item in counter" :key="item">item {{ item }}</li>
     </ul>
@@ -49,15 +49,17 @@ watch(
 </template>
 
 <style>
-ul:has(> :nth-child(5)) {
-  outline: 1px solid green;
-}
+.listCounter {
+  ul:has(> :nth-child(5)) {
+    outline: 1px solid green;
+  }
 
-ul:has(> :nth-child(5):last-child) {
-  outline: 1px solid blue;
-}
+  ul:has(> :nth-child(5):last-child) {
+    outline: 1px solid blue;
+  }
 
-ul:not(:has(> :nth-child(5))) {
-  outline: 1px solid red;
+  ul:not(:has(> :nth-child(5))) {
+    outline: 1px solid red;
+  }
 }
 </style>

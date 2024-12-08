@@ -159,7 +159,7 @@ div + p {
 
 # Advanced Uses of `:has` Selector
 
-```css {*|1-3|5-7|9-11}
+```css {*|1-3|5-7|9-11}{lines:true}
 ul:has(> :nth-child(5)) {
   outline: 1px solid green;
 }
@@ -179,7 +179,7 @@ ul:not(:has(> :nth-child(5))) {
 
 # Anywhere Selector
 
-```css
+```css {*}{lines:true}
 .container:has(option[value="dark"]:checked) {
   --primary-color: #e43;
   --surface-color: #1b1b1b;
@@ -218,7 +218,7 @@ ul:not(:has(> :nth-child(5))) {
 允許透過容器的尺寸來套用樣式，元件可以根據
 自身的大小判斷樣式而不用依賴於視窗
 
-- 不用再看 viewport 眼色，更好的預期元件會 是怎麼呈現 
+- 不用再看 viewport 眼色，更好的預期元件會 是怎麼呈現
 - 更好的重用性，不論放到哪個頁面都會是一致 的樣式套用邏輯
 - 嶄新的 css length 屬性
 -->
@@ -227,13 +227,13 @@ ul:not(:has(> :nth-child(5))) {
 
 # Container Queries - Code
 
-```html
+```html {*}{lines:true}
 <div class="element-wrap">
   <div class="element"></div>
 </div>
 ```
 
-```css
+```css {*}{lines:true}
 .element-wrap {
   /* container-name: element; */
   /* container-type: inline-size; */
@@ -835,7 +835,6 @@ src: ./pages/imported-slides.md
 hide: false
 
 ---
-
 
 ---
 

@@ -48,7 +48,7 @@ watch(
   </div>
 </template>
 
-<style>
+<style scoped>
 .listCounter {
   ul:has(> :nth-child(5)) {
     outline: 1px solid green;

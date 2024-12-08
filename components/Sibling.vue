@@ -5,7 +5,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 div:has(+ p) {
   color: red;
 }

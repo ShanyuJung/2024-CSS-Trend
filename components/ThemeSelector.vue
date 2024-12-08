@@ -17,7 +17,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .container {
   margin: 16px;
   --primary-color: rgb(82, 51, 238);

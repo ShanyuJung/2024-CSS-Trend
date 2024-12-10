@@ -305,6 +305,53 @@ ul:not(:has(> :nth-child(5))) {
 
 ---
 
+# Anchor Position
+
+### Typically, to position one element relative to another, one of the elements must be a descendant of the other.
+
+### Now, even if they are not in a parent-child relationship, it’s no longer an issue!
+
+<div class="anchor-wrapper">
+```css{*}{lines: true}
+.el {
+  anchor-name: --my-anchor;
+}
+.tooltip-1 {
+  bottom: anchor(--my-anchor top);
+  left: anchor(--my-anchor center);
+}
+.tooltip-2 {
+  top: anchor(--my-anchor center);
+  left: anchor(--my-anchor right);
+}
+```
+  <AnchorName />
+</div>
+
+<style>
+  .anchor-wrapper{
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
+    padding: 0 40px;
+  }
+  .slidev-code-wrapper{
+    flex-grow: 3;
+  }
+  .anchor-name-container{
+    flex-grow: 2;
+    margin-top: 40px;
+  }
+</style>
+
+<!--
+通常我們要讓一個元素依附在另外一個元素上的相對位
+置，其中一個元素必定為另一個元素的子代
+現在即便不是子代也沒有關係
+-->
+
+---
+
 # Code
 
 Use code snippets and get the highlighting directly, and even types hover!

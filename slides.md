@@ -312,7 +312,13 @@ ul:not(:has(> :nth-child(5))) {
 ### Now, even if they are not in a parent-child relationship, it’s no longer an issue!
 
 <div class="anchor-wrapper">
-```css{*}{lines: true}
+
+```html{*}{lines: true}
+<div class="tooltip tooltip-1">I'm an anchored tooltip.</div>
+<div class="tooltip tooltip-2">Me too!</div>
+<div class="el">Just Some Element</div>
+
+<style>
 .el {
   anchor-name: --my-anchor;
 }
@@ -324,7 +330,9 @@ ul:not(:has(> :nth-child(5))) {
   top: anchor(--my-anchor center);
   left: anchor(--my-anchor right);
 }
+</style>
 ```
+
   <AnchorName />
 </div>
 
@@ -332,7 +340,7 @@ ul:not(:has(> :nth-child(5))) {
   .anchor-wrapper{
     display: flex;
     gap: 20px;
-    margin-top: 40px;
+    margin-top: 20px;
     padding: 0 40px;
   }
   .slidev-code-wrapper{
@@ -340,7 +348,7 @@ ul:not(:has(> :nth-child(5))) {
   }
   .anchor-name-container{
     flex-grow: 2;
-    margin-top: 40px;
+    margin-top: 80px;
   }
 </style>
 
